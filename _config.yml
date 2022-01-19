@@ -1,6 +1,6 @@
 # Site settings
 title: f0cus7
-SEOTitle: 黄玄的博客 | Hux Blog
+SEOTitle: f0cus7's Blog
 header-img: img/home-bg.jpg
 email: f0cus7@protonmail.com
 description: "但行好事，莫问前程"
@@ -79,7 +79,7 @@ netease_comment: false
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "一切都是最好的安排"
-sidebar-avatar: https://github.com/Huxpro.png # use absolute URL, seeing it's used in both `/` and `/about/`
+#sidebar-avatar: https://github.com/Huxpro.png # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
