@@ -1,1 +1,1 @@
-f0cus7, interested in cyber security.
+hey, i am f0cus7, born for pwn.
