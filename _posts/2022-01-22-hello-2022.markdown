@@ -3,7 +3,7 @@ layout:     post
 title:      "Hello 2022"
 subtitle:   " \"Hello World\""
 date:       2022-01-19 12:00:00
-author:     "Hux"
+author:     "f0cus7"
 header-img: "img/post-bg-2015.jpg"
 catalog: true
 tags:
@@ -11,5 +11,5 @@ tags:
     - Meta
 ---
 
-hello world, here i am.
+hello world, i am born for pwn.
 
