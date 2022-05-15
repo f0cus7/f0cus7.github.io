@@ -1,1 +1,1 @@
-hey, i am f0cus7, born for pwn.
+hey, i am f0cus7.
