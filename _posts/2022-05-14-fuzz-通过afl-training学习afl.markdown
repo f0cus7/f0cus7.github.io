@@ -247,7 +247,7 @@ head 20 This string is going to be truncated at the 20th position.
 
 很快就`fuzz`出了结果：
 
-![quick_start_fuzz](./quick_start_fuzz.png)
+![quick_start_fuzz](https://raw.githubusercontent.com/f0cus7/f0cus7.github.io/blob/main/img/2022-05-14-fuzz-%E9%80%9A%E8%BF%87afl-training%E5%AD%A6%E4%B9%A0afl/quick_start_fuzz.png)
 
 `out`有相应的产出，其中`crashes`目录存储的是崩溃样本；`queue`目录存储的是成果触发新路径的样本即有趣的样本。
 
@@ -292,7 +292,7 @@ $ afl-fuzz -i in -o out ./vulnerable
 
 有了`quickstart`的经验，先来总结下`afl-fuzz`的主要组成及工作流程，如下图所示：
 
-![overview](./overview.svg)
+![overview](https://raw.githubusercontent.com/f0cus7/f0cus7.github.io/blob/main/img/2022-05-14-fuzz-%E9%80%9A%E8%BF%87afl-training%E5%AD%A6%E4%B9%A0afl/overview.svg)
 
 研究测试人员创建输入目录并提供变异的语料库（`input corpus`）；针对测试代码编写测试框架（`write harness`），经过`afl-clang-fast/afl-gcc`插桩编译后产生支持反馈模糊测试的二进制程序；`afl-fuzz`从队列（`queue`）中挑选种子进行变异；变异后的样本扔给测试框架（`harness`）运行并监控运行结果；如果崩溃，则存储到崩溃目录中（`crashes`）；如果样本成功触发了新路径，则将它添加到队列（`queue`）当中。
 
@@ -612,7 +612,7 @@ int main(int argc, char **argv) {
 }
 ```
 
-![libxml2_prompt](./libxml2_prompt.png)
+![libxml2_prompt](https://raw.githubusercontent.com/f0cus7/f0cus7.github.io/blob/main/img/2022-05-14-fuzz-%E9%80%9A%E8%BF%87afl-training%E5%AD%A6%E4%B9%A0afl/libxml2_prompt.png)
 
 ### heartbleed
 
@@ -737,7 +737,7 @@ afl-fuzz -m none -i in -o out ./handshake
 
 跑了一段时间以后，成功跑出`crash`：
 
-![heartbleed](./heartbleed.png)
+![heartbleed](https://raw.githubusercontent.com/f0cus7/f0cus7.github.io/blob/main/img/2022-05-14-fuzz-%E9%80%9A%E8%BF%87afl-training%E5%AD%A6%E4%B9%A0afl/heartbleed.png)
 
 在看了`ANSWERS.md`以及`HINTS.md`以后，提示说因开启了`ASAN`特性，因此最好去读读[docs/notes_for_asan.txt](https://github.com/mirrorer/afl/blob/master/docs/notes_for_asan.txt)。在读完文档后知道启用`ASAN`特性进行`fuzz`的时候最好是对`32`位程序，因为它们消耗的内存大致在`600-800m`左右；而当程序是`64`位的时候，所消耗的内存会达到`17.5 TB-20TB`左右，所以直接跑`64`位程序可能会出错。
 
@@ -908,7 +908,7 @@ fuzzer01  fuzzer02  fuzzer03  fuzzer04
 
 不一会就跑出了`crash`。
 
-![sendmail_parallel_fuzz](./sendmail_parallel_fuzz.png)
+![sendmail_parallel_fuzz](https://raw.githubusercontent.com/f0cus7/f0cus7.github.io/blob/main/img/2022-05-14-fuzz-%E9%80%9A%E8%BF%87afl-training%E5%AD%A6%E4%B9%A0afl/sendmail_parallel_fuzz.png)
 
 ### date
 
@@ -1045,7 +1045,7 @@ afl-fuzz -m none -i in -o out ~/Desktop/coreutils/src/date --date "2017-03-14 15
 
 过了一会，也就跑出了`crash`：
 
-![date_fuzz](./date_fuzz.png)
+![date_fuzz](https://raw.githubusercontent.com/f0cus7/f0cus7.github.io/blob/main/img/2022-05-14-fuzz-%E9%80%9A%E8%BF%87afl-training%E5%AD%A6%E4%B9%A0afl/date_fuzz.png)
 
 使用`afl`在对不是从标准输入或者文件中获取数据的目标进行模糊测试的时候，如何进行合理的转换是需要好好思考的问题。
 
@@ -1164,7 +1164,7 @@ afl-fuzz -i in -o out ~/Desktop/ntp-4.2.2/ntpq/ntpq
 
 不一会跑出`crash`：
 
-![ntpq_fuzz](./ntpq_fuzz.png)
+![ntpq_fuzz](https://raw.githubusercontent.com/f0cus7/f0cus7.github.io/blob/main/img/2022-05-14-fuzz-%E9%80%9A%E8%BF%87afl-training%E5%AD%A6%E4%B9%A0afl/ntpq_fuzz.png)
 
 跑了一段时间以后，会想知道跑了这么久跑了多少的覆盖率（针对`cookedprint`函数），可以使用`llvm`中对`gcov`的支持来查看覆盖率，具体可以去看[gcov與LLVM中的實現](https://maskray.me/blog/2020-09-27-gcov-and-llvm)。
 
