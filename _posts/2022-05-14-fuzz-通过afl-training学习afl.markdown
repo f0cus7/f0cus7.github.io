@@ -1423,6 +1423,8 @@ $ afl-fuzz -m none -i in -o out ./prescan-bad
 
 万物皆可`fuzz`。
 
+文章首发于[跳跳糖](https://tttang.com/archive/1508/)。
+
 ## 参考链接
 
 * [afl-training](https://github.com/mykter/afl-training)
